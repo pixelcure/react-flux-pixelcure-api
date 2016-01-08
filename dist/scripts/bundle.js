@@ -29139,7 +29139,16 @@ var Taglines = React.createClass({displayName: "Taglines",
 	},
 
 	render : function () {
-
+		
+		function createTaglineRow (tagline) {
+			return (
+				React.createElement("tr", {key: tagline.id}, 
+					React.createElement("td", null, React.createElement("a", {href: '/#taglines/' + tagline.autor.id}, tagline.author.id)), 
+					React.createElement("td", null, tagline.author.description)
+				)
+			);
+		}
+		console.log(this.state.taglines);
 		return(
 			React.createElement("div", null, 
 				React.createElement("h1", null, "Taglines"), 
@@ -29150,7 +29159,7 @@ var Taglines = React.createClass({displayName: "Taglines",
 						React.createElement("th", null, "Author")
 					), 
 					React.createElement("tbody", null, 
-						"// ",  this.state.authors.map( createTaglineRow, this) 
+						 this.state.taglines.map( createTaglineRow, this) 
 					)
 				)
 			)	

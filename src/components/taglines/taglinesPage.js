@@ -38,7 +38,16 @@ var Taglines = React.createClass({
 	},
 
 	render : function () {
-
+		
+		function createTaglineRow (tagline) {
+			return (
+				<tr key={tagline.id}>
+					<td><a href={'/#taglines/' + tagline.autor.id}>{tagline.author.id}</a></td>
+					<td>{tagline.author.description}</td>
+				</tr>
+			);
+		}
+		console.log(this.state.taglines);
 		return(
 			<div>
 				<h1>Taglines</h1>
@@ -49,7 +58,7 @@ var Taglines = React.createClass({
 						<th>Author</th>
 					</thead>
 					<tbody>
-						// { this.state.authors.map( createTaglineRow, this ) }
+						{ this.state.taglines.map( createTaglineRow, this ) }
 					</tbody>
 				</table>
 			</div>	
