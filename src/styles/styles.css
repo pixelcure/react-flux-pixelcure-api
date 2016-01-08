@@ -1,0 +1,8 @@
+/* App Styles */
+
+nav.nav a.navbar-brand {
+	padding: 0;
+}
+nav img {
+	width: 110px;
+}
